@@ -1,0 +1,115 @@
+.admin-page {
+    --surface: #ffffff;
+    --surface-soft: #f8fafc;
+    --border: #e5e7eb;
+    --text: #111827;
+    --muted: #6b7280;
+}
+
+.admin-page .admin-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.admin-page .admin-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.admin-page .admin-card-body {
+    padding: 20px;
+}
+
+.admin-page .notes-list {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.admin-page .note-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.admin-page .note-title {
+    color: var(--text);
+    font-weight: 700;
+}
+
+.admin-page .note-description {
+    margin: 4px 0 0;
+    color: var(--muted);
+    white-space: pre-line;
+}
+
+.admin-page .note-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.admin-page .note-actions form {
+    margin: 0;
+}
+
+.admin-page .admin-form {
+    max-width: 760px;
+}
+
+.admin-page .admin-form label {
+    color: var(--text);
+    font-weight: 700;
+}
+
+.admin-page .admin-form .form-control {
+    border-radius: 8px;
+}
+
+.admin-page .admin-empty {
+    margin: 0;
+    padding: 18px;
+    color: var(--muted);
+    text-align: center;
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    background: var(--surface-soft);
+}
+
+.admin-page .admin-alert {
+    border-radius: 8px;
+}
+
+.dark-mode .admin-page {
+    --surface: #1f2937;
+    --surface-soft: #111827;
+    --border: #374151;
+    --text: #f9fafb;
+    --muted: #cbd5e1;
+}
+
+@media (max-width: 768px) {
+    .admin-page .admin-toolbar,
+    .admin-page .note-item {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .admin-page .note-actions .btn,
+    .admin-page .note-actions form {
+        width: 100%;
+    }
+}

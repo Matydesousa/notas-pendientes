@@ -4,7 +4,7 @@
 
 [![Laravel CI](https://img.shields.io/github/actions/workflow/status/Matydesousa/notas-pendientes/laravel.yml?branch=main&label=Laravel%20CI&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/Matydesousa/notas-pendientes/actions/workflows/laravel.yml)
 [![PHP Version](https://img.shields.io/badge/PHP-8.3-777BB4?style=flat-square&logo=php&logoColor=white)](https://www.php.net/)
-[![Laravel](https://img.shields.io/badge/Laravel-11%2B-FF2D20?style=flat-square&logo=laravel&logoColor=white)](https://laravel.com/)
+[![Laravel](https://img.shields.io/badge/Laravel-13-FF2D20?style=flat-square&logo=laravel&logoColor=white)](https://laravel.com/)
 [![AdminLTE](https://img.shields.io/badge/UI-AdminLTE%203-3c8dbc?style=flat-square)](https://adminlte.io/)
 [![Database](https://img.shields.io/badge/DB-SQLite%20%2F%20MySQL-003B57?style=flat-square&logo=sqlite&logoColor=white)](database/)
 [![Code Style](https://img.shields.io/badge/Code%20Style-Laravel%20Pint-brightgreen?style=flat-square)](https://laravel.com/docs/pint)
@@ -18,7 +18,7 @@ Aplicación web desarrollada en Laravel para administrar notas rápidas y tareas
 
 ## 📌 Descripción
 
-El sistema implementa dos módulos CRUD independientes pero integrados bajo la misma interfaz administrativa, permitiendo crear, consultar, modificar y organizar notas y tareas, con control de estado (por cumplir / completadas) y filtros en tiempo real.
+El sistema implementa dos módulos CRUD independientes pero integrados bajo la misma interfaz administrativa, permitiendo crear, consultar, modificar y organizar notas y tareas, con control de estado (por cumplir / completadas) y vistas filtradas por estado.
 
 ---
 
@@ -57,7 +57,7 @@ erDiagram
     NOTE {
         bigint id PK
         string title
-        text content
+        string description
         timestamp created_at
         timestamp updated_at
     }
@@ -65,7 +65,7 @@ erDiagram
     PENDING {
         bigint id PK
         string title
-        text description
+        text description "nullable"
         boolean completed
         timestamp created_at
         timestamp updated_at
@@ -89,12 +89,12 @@ erDiagram
 
 ## 🛠️ Tecnologías y Estándares
 
-- **PHP 8.3**: Tipado estricto, métodos modernos y sintaxis limpia.
-- **Laravel**: Enrutamiento, validación con Form Requests, migraciones y ORM Eloquent.
+- **PHP 8.3**: Tipos declarados en métodos y sintaxis moderna.
+- **Laravel 13**: Enrutamiento, validación con Form Requests, migraciones y ORM Eloquent.
 - **SQLite / MySQL**: Base de datos relacional (configurada por defecto en SQLite para facilitar pruebas inmediatas).
-- **AdminLTE 3**: Dashboard responsive con alertas, botones de acción y tablas dinámicas.
+- **AdminLTE 3**: Dashboard responsive con alertas, tablas y acciones CRUD.
 - **Laravel Pint**: Formateador de código con estándares PSR-12.
-- **PHPUnit / Pest**: Suite de pruebas funcionales para cobertura completa de endpoints.
+- **PHPUnit 12**: Pruebas funcionales de los flujos principales de ambos módulos.
 
 ---
 
